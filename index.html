@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html class="page" lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tocha Dizkon</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.rawgit.com/mfd/09b70eb47474836f25a21660282ce0fd/raw/e06a670afcb2b861ed2ac4a1ef752d062ef6b46b/Gilroy.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,500"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body class="page__body">
+    <header class="header">
+      <div class="header__logo-wrapper">
+        <img
+          class="header__logo"
+          src="img/logo.svg"
+          alt="Логотип tocha."
+          width="40"
+          height="31"
+        />
+        <span class="header__name">tocha</span>
+      </div>
+      <nav class="header__menu header-menu">
+        <button
+          class="header-menu__button header-menu__button--open"
+          type="button"
+          onclick="window.dialogMenu.showModal();"
+        >
+          <span class="visually-hidden">Открыть меню.</span>
+        </button>
+        <dialog class="dialog menu" id="dialogMenu">
+          <ul class="menu__list">
+            <li class="menu__item">
+              <button
+                class="menu__button button button--enter button--add"
+                type="button"
+                onclick="window.dialogEnter.showModal();"
+              >
+                Вход
+              </button>
+            </li>
+            <li class="menu__item">
+              <button
+                class="menu__button button button--registration"
+                type="button"
+                onclick="window.dialogRegistration.showModal();"
+              >
+                Регистрация
+              </button>
+            </li>
+          </ul>
+          <button
+            class="header-menu__button header-menu__button--close"
+            type="button"
+            onclick="window.dialogMenu.close();"
+          >
+            <span class="visually-hidden">Закрыть меню.</span>
+          </button>
+        </dialog>
+        <dialog class="dialog enter" id="dialogEnter">
+          <h2 class="enter__title title title--dialog">Вход</h2>
+          <form class="enter__form" action="" method="post">
+            <label class="visually-hidden" for="tel">Телефон.</label>
+            <input
+              class="enter__input input"
+              type="tel"
+              id="tel"
+              name="tel"
+              placeholder="Телефон"
+              required
+            />
+            <label class="visually-hidden" for="password">Пароль</label>
+            <div class="enter__wrapper">
+              <span class="enter__button password"></span>
+              <input
+                class="enter__input enter__input--margin input"
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Пароль"
+                required
+              />
+            </div>
+            <span class="enter__help"
+              ><a class="enter__link" href="#">Напомнить пароль</a></span
+            >
+            <button class="enter__button button" type="submit">Войти</button>
+          </form>
+          <button
+            class="header-menu__button header-menu__button--close header-menu__button--enter-close"
+            type="button"
+            onclick="window.dialogEnter.close();"
+          >
+            <span class="visually-hidden">Закрыть.</span>
+          </button>
+        </dialog>
+        <dialog class="dialog registration" id="dialogRegistration">
+          <h2 class="registration__title title title--dialog">Регистрация</h2>
+          <form class="registration__form" action="" method="post">
+            <label class="visually-hidden" for="tel2">Телефон.</label>
+            <input
+              class="registration__input input"
+              type="tel"
+              id="tel2"
+              name="tel"
+              placeholder="Телефон"
+              required
+            />
+            <label class="visually-hidden" for="email">Электронная почта</label>
+            <input
+              class="registration__input registration__input--email input--check-email input"
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Электронная почта"
+              required
+            />
+            <label class="visually-hidden" for="password2">Пароль</label>
+            <div class="registration__wrapper">
+              <span class="registration__button password"></span>
+              <input
+                class="registration__input input"
+                type="password"
+                id="password2"
+                name="password"
+                placeholder="Пароль"
+                required
+              />
+            </div>
+            <label class="visually-hidden" for="password-repeat"
+              >Повторите пароль</label
+            >
+            <div class="registration__wrapper">
+              <span class="registration__button password"></span>
+              <input
+                class="registration__input input"
+                type="password"
+                id="password-repeat"
+                name="password"
+                placeholder="Повторите пароль"
+                required
+              />
+            </div>
+            <button class="registration__button button" type="submit">
+              Войти
+            </button>
+          </form>
+          <button
+            class="header-menu__button header-menu__button--close header-menu__button--registration-close"
+            type="button"
+            onclick="window.dialogRegistration.close();"
+          >
+            <span class="visually-hidden">Закрыть.</span>
+          </button>
+        </dialog>
+      </nav>
+    </header>
+    <main class="main-container">
+      <section class="intro">
+        <div class="intro__wrapper">
+          <h1 class="intro__title title">
+            <span class="intro__title intro__title--colored">Telegram чат</span>
+            на вашем сайте
+          </h1>
+          <p class="intro__description">
+            Общение с клиентами станет простым и удобным, а подключение займёт 5
+            минут. Первый месяц —
+            <span class="intro__description intro__description--colored"
+              >бесплатно</span
+            >!
+          </p>
+          <button class="intro__button button" type="button">Подключить</button>
+        </div>
+        <img
+          class="intro__image"
+          src="img/illustarations/i-intro.svg"
+          alt="Общение клиентки с консультантом."
+          width="330"
+          height="266"
+        />
+      </section>
+      <section class="advantages">
+        <div class="advantages__wrapper">
+          <h2 class="advantages__title title">Tocha Online — это</h2>
+          <ul class="advantages__list">
+            <li class="advantages__item">
+              <h3 class="advantages__subtitle">Ничего лишнего</h3>
+              <p class="advantages__description">
+                Отсутствие лишних приложений <br />для операторов. Оператору
+                не<br />
+                нужно учиться работать с чатом
+              </p>
+            </li>
+            <li class="advantages__item">
+              <h3 class="advantages__subtitle">Простота</h3>
+              <p class="advantages__description">Простая установка на сайт</p>
+            </li>
+            <li class="advantages__item">
+              <h3 class="advantages__subtitle">Несколько ассистентов</h3>
+              <p class="advantages__description">
+                Возможность подключения<br />
+                нескольких ассистентов
+              </p>
+            </li>
+            <li class="advantages__item">
+              <h3 class="advantages__subtitle">Кастомизация</h3>
+              <p class="advantages__description">
+                Настройка интерфейса под<br />
+                нужды сайта
+              </p>
+            </li>
+          </ul>
+        </div>
+        <img
+          class="advantages__image"
+          src="img/illustarations/i-advantages.svg"
+          alt="Чат со специалистом."
+          width="300"
+          height="487"
+        />
+      </section>
+      <section class="tariff">
+        <h2 class="tariff__title title">Тарифы</h2>
+        <p class="tariff__description">
+          Стоимость зависит<br />
+          от трафика сайта
+        </p>
+        <ul class="tariff__list">
+          <li class="tariff__item">
+            <h3 class="tariff__subtitle">Бесплатно</h3>
+            <p class="tariff__info">Пробный период на 1 месяц</p>
+            <span class="tariff__price">0₽/первый месяц</span>
+            <button class="tariff__button button" type="button">
+              Подключить за 0₽
+            </button>
+          </li>
+          <li class="tariff__item">
+            <h3 class="tariff__subtitle">Базовый</h3>
+            <p class="tariff__info">Менее 1000 посещений в сутки</p>
+            <span class="tariff__price">200₽/месяц</span>
+            <button class="tariff__button button" type="button">
+              Подключить за 200₽
+            </button>
+          </li>
+          <li class="tariff__item">
+            <h3 class="tariff__subtitle">Премиум</h3>
+            <p class="tariff__info">Более 1000 посещений в сутки</p>
+            <span class="tariff__price">500₽/месяц</span>
+            <button class="tariff__button button" type="button">
+              Подключить за 500₽
+            </button>
+          </li>
+        </ul>
+        <ul class="tariff__button-list slider-button-list">
+          <li class="tariff__button-item">
+            <label class="tariff__slider-label">
+              <input
+                class="tariff__slider-button slider-button slider-button--current"
+                type="radio"
+                name="tariff"
+                checked
+              />
+            </label>
+          </li>
+          <li class="tariff__button-item">
+            <label class="tariff__slider-label">
+              <input
+                class="tariff__slider-button slider-button"
+                name="tariff"
+                type="radio"
+              />
+            </label>
+          </li>
+          <li class="tariff__button-item">
+            <label class="tariff__slider-label">
+              <input
+                class="tariff__slider-button slider-button"
+                name="tariff"
+                type="radio"
+              />
+            </label>
+          </li>
+        </ul>
+      </section>
+      <section class="connection">
+        <h2 class="connection__title title">
+          Всего 3 шага для подключения Telegram чата
+        </h2>
+        <ol class="connection__list">
+          <li class="connection__item">
+            <span class="connection__item-number">1</span>
+            <h3 class="connection__subtitle">Telegram bot</h3>
+            <p class="connection__description">
+              Вы создаёте Telegram бота для вашего сайта
+            </p>
+            <img
+              class="connection__image"
+              src="img/illustarations/i-connectionitem1.svg"
+              alt="Создание бота в телеграм."
+              width="211"
+              height="422"
+            />
+          </li>
+          <li class="connection__item">
+            <span class="connection__item-number">2</span>
+            <h3 class="connection__subtitle">Подключение Tocha</h3>
+            <p class="connection__description">
+              Tocha подключает Telegram бота к вашиму сайту
+            </p>
+            <img
+              class="connection__image"
+              src="img/illustarations/i-connectionitem2.svg"
+              alt="Подключение бота к сайту."
+              width="211"
+              height="422"
+            />
+          </li>
+          <li class="connection__item">
+            <span class="connection__item-number">3</span>
+            <h3 class="connection__subtitle">Telegram-чат</h3>
+            <p class="connection__description">
+              Консультант отвечает на вопросы посетителей сайта
+            </p>
+            <img
+              class="connection__image"
+              src="img/illustarations/i-connectionitem3.svg"
+              alt="Общение со специалистом в чате."
+              width="211"
+              height="422"
+            />
+          </li>
+        </ol>
+        <ul class="connection__button-list slider-button-list">
+          <li class="connection__button-item">
+            <label class="connection__slider-label">
+              <input
+                class="connection__slider-button slider-button"
+                type="radio"
+                name="connection"
+                checked
+              />
+            </label>
+          </li>
+          <li class="connection__button-item">
+            <label class="connection__slider-label">
+              <input
+                class="connection__slider-button slider-button"
+                type="radio"
+                name="connection"
+              />
+            </label>
+          </li>
+          <li class="connection__button-item">
+            <label class="connection__slider-label">
+              <input
+                class="connection__slider-button slider-button"
+                type="radio"
+                name="connection"
+              />
+            </label>
+          </li>
+        </ul>
+      </section>
+      <section class="reviews">
+        <h2 class="reviews__title title">Отзывы клиентов</h2>
+        <ul class="reviews__list">
+          <li class="reviews__item">
+            <div class="reviews__card">
+              <h3 class="reviews__subtitle">Как же удобно!</h3>
+              <p class="reviews__content">
+                В рамках спецификации современных стандартов, базовые сценарии
+                поведения пользователей, которые представляют собой яркий пример
+                <br />
+                континентально-европейского типа политической культуры, будут
+                преданы социально-демократической анафеме.
+              </p>
+            </div>
+            <div class="reviews__author">
+              <img
+                class="reviews__photo"
+                src="img/photos/ph-reviews1.png"
+                alt="Анна Купер."
+                width="56"
+                height="56"
+              />
+              <div class="reviews__wrapper">
+                <h3 class="reviews__name">Анна Купер</h3>
+                <a class="reviews__company-link" href="#">romashka.ru</a>
+              </div>
+            </div>
+          </li>
+          <li class="reviews__item">
+            <div class="reviews__card">
+              <h3 class="reviews__subtitle">
+                Теперь мы идем в ногу со временем
+              </h3>
+              <p class="reviews__content">
+                А ещё интерактивные прототипы превращены в посмешище, хотя само
+                их существование приносит несомненную пользу обществу.
+                Банальные, но неопровержимые выводы, а также тщательные
+                исследования конкурентов формируют сеть.
+              </p>
+            </div>
+            <div class="reviews__author">
+              <img
+                class="reviews__photo"
+                src="img/photos/ph-reviews2.png"
+                alt="Андрей Васильев."
+              />
+              <div class="reviews__wrapper">
+                <h3 class="reviews__name">Андрей Васильев</h3>
+                <a class="reviews__company-link" href="#">samogon-ont.ru</a>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <ul class="reviews__button-list slider-button-list">
+          <li class="reviews__button-item">
+            <label class="reviews__slider-label">
+              <input
+                class="reviews__slider-button slider-button"
+                type="radio"
+                name="reviews"
+                checked
+              />
+            </label>
+          </li>
+          <li class="reviews__button-item">
+            <label class="reviews__slider-label">
+              <input
+                class="reviews__slider-button slider-button"
+                name="reviews"
+                type="radio"
+              />
+            </label>
+          </li>
+          <li class="reviews__button-item">
+            <label class="reviews__slider-label">
+              <input
+                class="reviews__slider-button slider-button"
+                name="reviews"
+                type="radio"
+              />
+            </label>
+          </li>
+        </ul>
+      </section>
+      <section class="connection-form">
+        <form class="connection-form form" action="" method="post">
+          <img
+            class="form__image"
+            src="img/illustarations/i-connection-form.svg"
+            alt="Общение в чате."
+            width="269"
+            height="239"
+          />
+          <div class="form__container">
+            <label class="form__label" for="email2"
+              >Подключите Telegram<br />
+              чат уже сегодня</label
+            >
+            <div class="form__wrapper">
+              <input
+                class="form__input input--check-email input"
+                type="email"
+                id="email2"
+                name="email"
+                placeholder="Введите e-mail"
+                required
+              />
+
+              <button class="form__button" type="submit">Отправить</button>
+            </div>
+          </div>
+        </form>
+      </section>
+    </main>
+    <footer class="footer">
+      <img
+        class="footer__logo"
+        src="img/logo-footer.svg"
+        alt="Логотип tocha."
+        width="88"
+        height="96"
+      />
+      <nav class="footer__navigation navigation">
+        <ul class="navigation__list navigation__list--first">
+          <li class="navigation__item navigation__item--important">
+            <a class="navigation__link navigation__link--important" href="#"
+              >Telegram чат</a
+            >
+          </li>
+          <li class="navigation__item">
+            <a class="navigation__link" href="#">О нас</a>
+          </li>
+          <li class="navigation__item">
+            <a class="navigation__link" href="#">Партнеры</a>
+          </li>
+          <li class="navigation__item">
+            <a class="navigation__link" href="#">Инструкция</a>
+          </li>
+          <li class="navigation__item">
+            <a class="navigation__link" href="#">Цены</a>
+          </li>
+          <li class="navigation__item">
+            <a class="navigation__link" href="#">Контакты</a>
+          </li>
+        </ul>
+        <ul class="navigation__list navigation__list--second">
+          <li class="navigation__item navigation__item--important">
+            <a class="navigation__link navigation__link--important" href="#"
+              >Поддержка</a
+            >
+          </li>
+          <li class="navigation__item">
+            <a class="navigation__link" href="#">Центр поддержки</a>
+          </li>
+          <li class="navigation__item">
+            <a class="navigation__link" href="#">Политика конфеденциальности</a>
+          </li>
+          <li class="navigation__item">
+            <a class="navigation__link" href="#">Документы оферта</a>
+          </li>
+          <li class="navigation__item">
+            <a class="navigation__link" href="#">Статус</a>
+          </li>
+        </ul>
+      </nav>
+      <span class="footer__copyright"> © 2021 Tocha. Все права защищены </span>
+    </footer>
+    <script src="js/modal.js"></script>
+    <script src="js/form.js"></script>
+  </body>
+</html>
