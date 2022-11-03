@@ -1,0 +1,20 @@
+.page {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  color: #1d2530;
+  min-width: 375px;
+  background-color: rgba(242, 247, 255, 0.4);
+  scrollbar-gutter: stable;
+}
+
+.page__body {
+  margin: 0;
+  scrollbar-gutter: stable;
+
+  &--scroll-lock {
+    overflow: hidden;
+  }
+}

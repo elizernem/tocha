@@ -1,0 +1,11 @@
+.connection-form {
+  background-color: #fff;
+  padding-top: 54px;
+  padding-bottom: 54px;
+
+  @media (min-width: $desktop-width) {
+    padding-right: 160px;
+    padding-left: 160px;
+  }
+}
+

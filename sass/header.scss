@@ -1,0 +1,18 @@
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  padding: 32px 23px;
+
+  @media (min-width: $desktop-width) {
+    padding-right: 160px;
+    padding-left: 160px;
+  }
+}
+
+.header__name {
+  font-weight: 700;
+  font-size: 28.1106px;
+  line-height: 21px;
+}

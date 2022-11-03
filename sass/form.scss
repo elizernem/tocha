@@ -1,0 +1,83 @@
+.form {
+  background-image: url(../img/background/bg-connection-form.png);
+  background-size: 87% 467px;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 0 auto;
+
+  @media (min-width: $tablet-width) {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+.form__image {
+  display: block;
+  margin: auto;
+  margin-top: -40px;
+  margin-bottom: 24px;
+
+  @media (min-width: $tablet-width) {
+    margin: 0;
+  }
+}
+
+.form__label {
+  display: block;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 32px;
+  color: #fff;
+  padding-left: 70px;
+  padding-right: 10px;
+  margin: 0 auto;
+  margin-bottom: 16px;
+
+  @media (min-width: $tablet-width) {
+    padding-left: 0;
+    margin: 0;
+  }
+}
+
+.form__container {
+  @media (min-width: $tablet-width) {
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+}
+
+.form__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.form__input {
+  border-radius: 5px 0px 0px 5px;
+}
+
+.form__button {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+  color: #fff;
+  background: #18191f;
+  border-radius: 0px 5px 5px 0px;
+  border: none;
+  outline: 1px solid #18191f;
+  cursor: pointer;
+
+  &:hover {
+    background: #6d9bff;
+    outline: 1px solid #6d9bff;
+  }
+
+  &:active {
+    background: #2c5cff;
+    outline: 1px solid #2c5cff;
+  }
+}

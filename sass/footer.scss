@@ -1,0 +1,29 @@
+.footer {
+  position: relative;
+  background-color: #1d2530;
+}
+
+.footer__logo {
+  position: absolute;
+  top: 60px;
+  left: 23px;
+
+  @media (min-width: $desktop-width) {
+    top: 113px;
+    left: 229px;
+  }
+}
+
+.footer__navigation {
+  padding: 60px 40px 40px 144px;
+}
+
+.footer__copyright {
+  display: block;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  color: #d9dbe1;
+  background-color: #141b23;
+  padding: 25px 97px 25px 40px;
+}

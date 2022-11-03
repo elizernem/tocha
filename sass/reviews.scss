@@ -1,0 +1,129 @@
+.reviews {
+  position: relative;
+  width: 100%;
+  margin-top: 0;
+  margin-bottom: 51px;
+  padding-right: 23px;
+  padding-left: 23px;
+  overflow-x: hidden;
+}
+
+.reviews::before {
+  content: "";
+  width: 54px;
+  height: 46px;
+  background-repeat: no-repeat;
+  background-image: url("../img/icons/ic-reviews.svg");
+  background-size: 54px 46px;
+  display: block;
+  margin-left: auto;
+
+  @media (min-width: $tablet-width) {
+    width: 112px;
+    height: 95px;
+    background-size: 112px 95px;
+  }
+}
+
+.reviews__title {
+  margin-top: 0;
+  margin-bottom: 72px;
+  text-align: center;
+}
+
+.reviews__list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0 0 25px;
+  display: flex;
+  gap: 30px;
+
+  @media (min-width: $tablet-width) {
+    justify-content: center;
+  }
+}
+
+.reviews__item {
+  display: block;
+}
+
+.reviews__card {
+  position: relative;
+  min-width: 327px;
+  background: #fff;
+  border-radius: 6px;
+  padding: 32px 20px 59px;
+  margin-bottom: 13px;
+  box-shadow: 0 10px 20px rgb(41 41 42 / 7%);
+  height: 315px;
+
+  @media (min-width: $tablet-width) {
+    padding: 32px;
+    padding-bottom: 59px;
+  }
+}
+
+.reviews__card::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -25px;
+  border: 10px solid transparent;
+  border-top: 20px solid #fff;
+}
+
+.reviews__subtitle {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 28px;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+.reviews__content {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  text-align: center;
+
+  @media (min-width: $tablet-width) {
+    width: 476px;
+  }
+}
+
+.reviews__content br {
+  @media (min-width: $tablet-width) {
+    display: none;
+  }
+}
+
+.reviews__author {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.reviews__photo {
+  display: block;
+}
+
+.reviews__name {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 28px;
+  margin: 0;
+}
+
+.reviews__company-link {
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  color: inherit;
+  text-decoration: none;
+  margin: 0;
+}

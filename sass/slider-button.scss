@@ -1,0 +1,22 @@
+.slider-button {
+  visibility: hidden;
+}
+
+.slider-button::after {
+  content: "";
+  visibility: visible;
+  display: block;
+  box-sizing: border-box;
+  width: 11px;
+  height: 10px;
+  border-radius: 50%;
+  outline: 2px solid #685ed6;
+  padding: 0;
+  border: none;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.slider-button:checked:after {
+  background-color: rgba(104, 94, 214, 1);
+}
