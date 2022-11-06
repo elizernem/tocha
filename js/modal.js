@@ -1,50 +1,53 @@
-const dialogOpener = document.querySelector(".header-menu__button--open");
-const dialog = document.querySelector(".dialog");
+const menu = document.querySelector(".header-menu");
+const toggle = document.querySelector(".header-menu__toggle");
 const body = document.querySelector(".page__body");
-const buttonEnter = document.querySelector(".button--enter");
-const enter = document.querySelector(".enter");
-const buttonRegistration = document.querySelector(".button--registration");
-const registration = document.querySelector(".registration");
-const closeEnterButton = document.querySelector(
-  ".header-menu__button--enter-close"
-);
-const closeRegistrationButton = document.querySelector(
-  ".header-menu__button--registration-close"
-);
+const intro = document.querySelector(".intro");
 
-buttonEnter.addEventListener("click", () => {
-  enter.style.display = "block";
-  closeEnterButton.style.display = "block";
-  enter.classList.add("dialog--open");
-  document.body.classList.add("page__body--scroll-lock");
+const enter = document.getElementById("dialogEnter");
+const registration = document.getElementById("dialogRegistration");
+const enterInput = enter.querySelectorAll(".input");
+const registrationInput = registration.querySelectorAll(".input");
+
+const input = document.querySelectorAll(".input");
+const inputEmail = document.querySelectorAll(".input--check-email");
+const inputPhone = document.querySelectorAll(".input--check-phone");
+const passwordInput = document.querySelectorAll(".input--password");
+
+const passwordOriginal = registration.querySelector(".password-original");
+const passwordRepeat = registration.querySelector(".password-repeat");
+
+menu.classList.remove("header-menu--nojs");
+menu.classList.remove("header-menu--opened");
+menu.classList.add("header-menu--closed");
+
+toggle.addEventListener("click", function () {
+  menu.classList.toggle("header-menu--closed");
+  menu.classList.toggle("header-menu--opened");
 });
 
-buttonRegistration.addEventListener("click", () => {
-  registration.style.display = "block";
-  closeRegistrationButton.style.display = "block";
-  registration.classList.add("dialog--open");
-  document.body.classList.add("page__body--scroll-lock");
-});
-
-dialogOpener.addEventListener("click", () => {
-  document.body.classList.add("page__body--scroll-lock");
-});
-
-dialog.addEventListener("close", () => {
-  body.classList.remove("page__body--scroll-lock");
-  dialog.style.display = "none";
-});
-
-enter.addEventListener("close", () => {
-  body.classList.remove("page__body--scroll-lock");
-  enter.style.display = "none";
-  enter.classList.remove("dialog--open");
-  closeEnterButton.style.display = "none";
+toggle.addEventListener("click", function () {
+  if (menu.classList.contains("header-menu--opened")) {
+    document.body.classList.add("page__body--modal-open");
+    intro.style.background = "none";
+  } else {
+    document.body.classList.remove("page__body--modal-open");
+  }
 });
 
 registration.addEventListener("close", () => {
-  body.classList.remove("page__body--scroll-lock");
-  registration.style.display = "none";
-  registration.classList.remove("dialog--open");
-  closeRegistrationButton.style.display = "none";
+  for (let i = 0; i < registrationInput.length; i++) {
+    registrationInput[i].value = "";
+    passwordInput[i].type = "password";
+    passwordRepeat.classList.remove("input--error");
+    registrationInput[i].removeAttribute("required");
+  }
 });
+
+enter.addEventListener("close", () => {
+  for (let i = 0; i < enterInput.length; i++) {
+    enterInput[i].value = "";
+    passwordInput[i].type = "password";
+    enterInput[i].removeAttribute("required");
+  }
+});
+

@@ -1,5 +1,5 @@
 .page {
-  font-family: "Gilroy";
+  font-family: "Gilroy", "Arial", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
@@ -8,13 +8,19 @@
   min-width: 375px;
   background-color: rgba(242, 247, 255, 0.4);
   scrollbar-gutter: stable;
+  height: 100%;
 }
 
 .page__body {
   margin: 0;
   scrollbar-gutter: stable;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 
-  &--scroll-lock {
+  &--modal-open {
     overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.1);
+
   }
 }

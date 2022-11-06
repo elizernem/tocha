@@ -27,133 +27,114 @@
         />
         <span class="header__name">tocha</span>
       </div>
-      <nav class="header__menu header-menu">
-        <button
-          class="header-menu__button header-menu__button--open"
-          type="button"
-          onclick="window.dialogMenu.showModal();"
-        >
+      <nav
+        class="header__menu header-menu header-menu--opened header-menu--nojs"
+      >
+        <button class="header-menu__toggle" type="button">
           <span class="visually-hidden">Открыть меню.</span>
         </button>
-        <dialog class="dialog menu" id="dialogMenu">
-          <ul class="menu__list">
-            <li class="menu__item">
-              <button
-                class="menu__button button button--enter button--add"
-                type="button"
-                onclick="window.dialogEnter.showModal();"
-              >
-                Вход
-              </button>
-            </li>
-            <li class="menu__item">
-              <button
-                class="menu__button button button--registration"
-                type="button"
-                onclick="window.dialogRegistration.showModal();"
-              >
-                Регистрация
-              </button>
-            </li>
-          </ul>
-          <button
-            class="header-menu__button header-menu__button--close"
-            type="button"
-            onclick="window.dialogMenu.close();"
-          >
-            <span class="visually-hidden">Закрыть меню.</span>
-          </button>
-        </dialog>
-        <dialog class="dialog enter" id="dialogEnter">
-          <h2 class="enter__title title title--dialog">Вход</h2>
-          <form class="enter__form" action="" method="post">
+        <ul class="header-menu__list">
+          <li class="header-menu__item">
+            <button
+              class="header-menu__button button button--enter button--add"
+              type="button"
+              onclick="window.dialogEnter.showModal();"
+            >
+              Вход
+            </button>
+          </li>
+          <li class="header-menu__item">
+            <button
+              class="header-menu__button button button--registration"
+              type="button"
+              onclick="window.dialogRegistration.showModal();"
+            >
+              Регистрация
+            </button>
+          </li>
+        </ul>
+        <dialog class="dialog" id="dialogEnter">
+          <h2 class="dialog__title title title--dialog">Вход</h2>
+          <form class="dialog__form" action="" method="post">
             <label class="visually-hidden" for="tel">Телефон.</label>
             <input
-              class="enter__input input"
+              class="dialog__input input input--check-phone"
               type="tel"
               id="tel"
               name="tel"
               placeholder="Телефон"
-              required
             />
             <label class="visually-hidden" for="password">Пароль</label>
-            <div class="enter__wrapper">
-              <span class="enter__button password"></span>
+            <div class="dialog__wrapper">
+              <button class="dialog__button password" type="button"></button>
               <input
-                class="enter__input enter__input--margin input"
+                class="dialog__input enter__input--margin input input--password"
                 type="password"
                 id="password"
                 name="password"
                 placeholder="Пароль"
-                required
               />
             </div>
-            <span class="enter__help"
-              ><a class="enter__link" href="#">Напомнить пароль</a></span
+            <span class="dialog__help"
+              ><a class="dialog__link" href="#">Напомнить пароль</a></span
             >
-            <button class="enter__button button" type="submit">Войти</button>
+            <button class="dialog__button button" type="submit">Войти</button>
           </form>
           <button
-            class="header-menu__button header-menu__button--close header-menu__button--enter-close"
+            class="dialog__button-close"
             type="button"
             onclick="window.dialogEnter.close();"
           >
             <span class="visually-hidden">Закрыть.</span>
           </button>
         </dialog>
-        <dialog class="dialog registration" id="dialogRegistration">
-          <h2 class="registration__title title title--dialog">Регистрация</h2>
-          <form class="registration__form" action="" method="post">
+        <dialog class="dialog" id="dialogRegistration">
+          <h2 class="dialog__title title title--dialog">Регистрация</h2>
+          <form class="dialog__form" action="" method="post">
             <label class="visually-hidden" for="tel2">Телефон.</label>
             <input
-              class="registration__input input"
+              class="dialog__input input input--check-phone"
               type="tel"
               id="tel2"
               name="tel"
               placeholder="Телефон"
-              required
             />
             <label class="visually-hidden" for="email">Электронная почта</label>
             <input
-              class="registration__input registration__input--email input--check-email input"
+              class="dialog__input registration__input--email input--check-email input"
               type="email"
               id="email"
               name="email"
               placeholder="Электронная почта"
-              required
             />
             <label class="visually-hidden" for="password2">Пароль</label>
-            <div class="registration__wrapper">
-              <span class="registration__button password"></span>
+            <div class="dialog__wrapper">
+              <button class="dialog__button password" type="button"></button>
               <input
-                class="registration__input input"
+                class="dialog__input input input--password password-original"
                 type="password"
-                id="password2"
-                name="password"
+                id="password-original"
+                name="password-original"
                 placeholder="Пароль"
-                required
               />
             </div>
             <label class="visually-hidden" for="password-repeat"
               >Повторите пароль</label
             >
-            <div class="registration__wrapper">
-              <span class="registration__button password"></span>
+            <div class="dialog__wrapper">
+              <button class="dialog__button password"></button>
               <input
-                class="registration__input input"
+                class="dialog__input input input--password password-repeat"
                 type="password"
                 id="password-repeat"
                 name="password"
                 placeholder="Повторите пароль"
-                required
               />
             </div>
-            <button class="registration__button button" type="submit">
-              Войти
-            </button>
+            <button class="dialog__button button" type="submit">Войти</button>
           </form>
           <button
-            class="header-menu__button header-menu__button--close header-menu__button--registration-close"
+            class="dialog__button-close"
             type="button"
             onclick="window.dialogRegistration.close();"
           >
@@ -235,7 +216,10 @@
         <ul class="tariff__list">
           <li class="tariff__item">
             <h3 class="tariff__subtitle">Бесплатно</h3>
-            <p class="tariff__info">Пробный период на 1 месяц</p>
+            <p class="tariff__info">
+              Пробный период<br />
+              на 1 месяц
+            </p>
             <span class="tariff__price">0₽/первый месяц</span>
             <button class="tariff__button button" type="button">
               Подключить за 0₽
@@ -473,7 +457,6 @@
                 id="email2"
                 name="email"
                 placeholder="Введите e-mail"
-                required
               />
 
               <button class="form__button" type="submit">Отправить</button>
@@ -537,5 +520,6 @@
     </footer>
     <script src="js/modal.js"></script>
     <script src="js/form.js"></script>
+    <script src="js/slider.js"></script>
   </body>
 </html>

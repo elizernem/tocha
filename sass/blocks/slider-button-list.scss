@@ -1,0 +1,14 @@
+.slider-button-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+
+  @media (min-width: $desktop-width) {
+    display: none;
+  }
+}

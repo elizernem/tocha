@@ -4,18 +4,19 @@
   background-color: #f7f7fd;
   outline: 1px solid #f7f7fd;
 
-  &--error {
-    padding: 16px 10px;
-    border: none;
-    background-color: #f7f7fd;
-    outline: 1px solid rgba(249, 50, 50, 1);
-  }
-
   &:hover {
     outline: 1px solid #e8e6f8;
   }
 
   &:focus {
     outline: 1px solid #605dec;
+  }
+
+  &:invalid {
+    outline: 1px solid rgba(249, 50, 50, 1);
+  }
+
+  &--error {
+    outline: 1px solid rgba(249, 50, 50, 1);
   }
 }

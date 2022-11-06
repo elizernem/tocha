@@ -34,12 +34,19 @@
 .reviews__list {
   list-style-type: none;
   padding: 0;
-  margin: 0 0 25px;
   display: flex;
   gap: 30px;
+  max-width: 327px;
+  overflow-x: hidden;
+  margin: 0 auto;
+  margin-bottom: 25px;
 
   @media (min-width: $tablet-width) {
-    justify-content: center;
+    max-width: 540px;
+  }
+
+  @media (min-width: $desktop-width) {
+    max-width: fit-content;
   }
 }
 

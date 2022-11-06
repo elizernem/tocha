@@ -37,28 +37,36 @@
   gap: 30px;
   list-style-type: none;
   padding: 0;
-  margin: 0;
+  max-width: 329px;
+  overflow-x: hidden;
+  margin: 0 auto;
   margin-bottom: 24px;
 
   @media (min-width: $tablet-width) {
     gap: 27px;
     justify-content: center;
+    max-width: fit-content;
+    overflow-x: clip;
   }
 }
 
 .connection__item {
   position: relative;
+  height: fit-content;
 }
 
 .connection__item:nth-child(2) {
   position: relative;
   @media (min-width: $desktop-width) {
     top: 69px;
+    margin-bottom: 40px;
   }
 }
 
 .connection__item:nth-child(2) img {
   @media (min-width: $desktop-width) {
+    position: relative;
+    top: -5px;
     width: 281px;
     height: 560px;
   }
