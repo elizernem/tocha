@@ -4,6 +4,8 @@ const body = document.querySelector(".page__body");
 const intro = document.querySelector(".intro");
 const advantages = document.querySelector(".advantages");
 
+const openDialogButton = document.querySelectorAll(".header-menu__button");
+const dialog = document.querySelectorAll(".dialog");
 const enter = document.getElementById("dialogEnter");
 const registration = document.getElementById("dialogRegistration");
 const enterInput = enter.querySelectorAll(".input");
@@ -41,6 +43,7 @@ registration.addEventListener("close", () => {
     passwordInput[i].type = "password";
     passwordRepeat.classList.remove("input--error");
     registrationInput[i].removeAttribute("required");
+    body.classList.remove("page__body--modal-open");
   }
 });
 
@@ -49,5 +52,14 @@ enter.addEventListener("close", () => {
     enterInput[i].value = "";
     passwordInput[i].type = "password";
     enterInput[i].removeAttribute("required");
+    body.classList.remove("page__body--modal-open");
   }
 });
+
+for(let i = 0; i < openDialogButton.length; i++) {
+  openDialogButton[i].onclick = function () {
+    dialog[i].showModal();
+    body.classList.add("page__body--modal-open");
+    intro.style.background = "none";
+  }
+}
