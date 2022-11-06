@@ -19,9 +19,7 @@ export const styles = () => {
 };
 
 const watcher = () => {
-    gulp.watch('sass/**/*.scss', gulp.series(styles));
-  }
+  gulp.watch("sass/**/*.scss", gulp.series(styles));
+};
 
-  export default gulp.series(
-    styles, watcher
-  );
+export default gulp.series(styles, watcher);

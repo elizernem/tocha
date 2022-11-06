@@ -2,6 +2,7 @@ const menu = document.querySelector(".header-menu");
 const toggle = document.querySelector(".header-menu__toggle");
 const body = document.querySelector(".page__body");
 const intro = document.querySelector(".intro");
+const advantages = document.querySelector(".advantages");
 
 const enter = document.getElementById("dialogEnter");
 const registration = document.getElementById("dialogRegistration");
@@ -27,10 +28,10 @@ toggle.addEventListener("click", function () {
 
 toggle.addEventListener("click", function () {
   if (menu.classList.contains("header-menu--opened")) {
-    document.body.classList.add("page__body--modal-open");
+    body.classList.add("page__body--modal-open");
     intro.style.background = "none";
   } else {
-    document.body.classList.remove("page__body--modal-open");
+    body.classList.remove("page__body--modal-open");
   }
 });
 
@@ -50,4 +51,3 @@ enter.addEventListener("close", () => {
     enterInput[i].removeAttribute("required");
   }
 });
-

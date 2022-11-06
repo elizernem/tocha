@@ -4,7 +4,6 @@
   padding-bottom: 60px;
   padding-right: 23px;
   padding-left: 23px;
-  background-color: rgba(242, 247, 255, 0.5);
   background-image: url("../img/background/bg-intro.png");
   background-repeat: no-repeat;
   background-size: 100% auto;
@@ -23,7 +22,7 @@
 
 .intro__wrapper {
   @media (min-width: $tablet-width) {
-    width: 50%;
+    max-width: 270px;
   }
 }
 
@@ -61,4 +60,10 @@
 .intro__image {
   display: block;
   margin: 0 auto;
+  position: relative;
+
+  @media (min-width: $tablet-width) {
+    height: auto;
+    flex-grow: 1;
+  }
 }
