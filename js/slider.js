@@ -13,59 +13,27 @@ if (mediaQueryTablet.matches) {
   connectionButtonList.style.display = "none";
 }
 
-for (let i = 0; i < tariffButton.length; i++) {
-  tariffCard[i].style.order = `${tariffButton.length - 1}`;
-  tariffCard[0].style.order = `${0}`;
-  tariffButton[i].onclick = function () {
-    tariffCard[i].style.order = `${0}`;
-    if (i === 0) {
-      tariffCard[i + 1].style.order = `${1}`;
-      tariffCard[i + 2].style.order = `${i + 2}`;
-    } else if (i < tariffButton.length - 1) {
-      tariffCard[i - 1].style.order = `${i + 3}`;
-      tariffCard[i + 1].style.order = `${1}`;
-      tariffCard[0].style.order = `${tariffButton.length - 1}`;
-    } else {
-      tariffCard[0].style.order = `${1}`;
-      tariffCard[i - 1].style.order = `${tariffButton.length - 1}`;
-    }
-  };
+const slider = function (buttons, slides) {
+  for (let i = 0; i < buttons.length; i++) {
+    slides[i].style.order = `${buttons.length - 1}`;
+    slides[0].style.order = `${0}`;
+    buttons[i].onclick = function () {
+      slides[i].style.order = `${0}`;
+      if (i === 0) {
+        slides[i + 1].style.order = `${1}`;
+        slides[i + 2].style.order = `${i + 2}`;
+      } else if (i < buttons.length - 1) {
+        slides[i - 1].style.order = `${i + 3}`;
+        slides[i + 1].style.order = `${1}`;
+        slides[0].style.order = `${buttons.length - 1}`;
+      } else {
+        slides[0].style.order = `${1}`;
+        slides[i - 1].style.order = `${buttons.length - 1}`;
+      }
+    };
+  }
 }
 
-for (let i = 0; i < connectionButton.length; i++) {
-  connectionCard[i].style.order = `${connectionButton.length - 1}`;
-  connectionCard[0].style.order = `${0}`;
-  connectionButton[i].onclick = function () {
-    connectionCard[i].style.order = `${0}`;
-    if (i === 0) {
-      connectionCard[i + 1].style.order = `${1}`;
-      connectionCard[i + 2].style.order = `${i + 2}`;
-    } else if (i < connectionButton.length - 1) {
-      connectionCard[i - 1].style.order = `${i + 3}`;
-      connectionCard[i + 1].style.order = `${1}`;
-      connectionCard[0].style.order = `${connectionButton.length - 1}`;
-    } else {
-      connectionCard[0].style.order = `${1}`;
-      connectionCard[i - 1].style.order = `${connectionButton.length - 1}`;
-    }
-  };
-}
-
-for (let i = 0; i < reviewsButton.length; i++) {
-  reviewsCard[i].style.order = `${reviewsButton.length - 1}`;
-  reviewsCard[0].style.order = `${0}`;
-  reviewsButton[i].onclick = function () {
-    reviewsCard[i].style.order = `${0}`;
-    if (i === 0) {
-      reviewsCard[i + 1].style.order = `${1}`;
-      reviewsCard[i + 2].style.order = `${i + 2}`;
-    } else if (i < reviewsButton.length - 1) {
-      reviewsCard[i - 1].style.order = `${i + 3}`;
-      reviewsCard[i + 1].style.order = `${1}`;
-      reviewsCard[0].style.order = `${reviewsButton.length - 1}`;
-    } else {
-      reviewsCard[0].style.order = `${1}`;
-      reviewsCard[i - 1].style.order = `${reviewsButton.length - 1}`;
-    }
-  };
-}
+slider(tariffButton, tariffCard);
+slider(connectionButton, connectionCard);
+slider(reviewsButton, reviewsCard);
