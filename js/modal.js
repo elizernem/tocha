@@ -31,9 +31,10 @@ toggle.addEventListener("click", function () {
 toggle.addEventListener("click", function () {
   if (menu.classList.contains("header-menu--opened")) {
     body.classList.add("page__body--modal-open");
-    intro.style.background = "none";
+    intro.classList.add("intro--modal-open");
   } else {
     body.classList.remove("page__body--modal-open");
+    intro.classList.remove("intro--modal-open");
   }
 });
 
@@ -44,6 +45,7 @@ registration.addEventListener("close", () => {
     passwordRepeat.classList.remove("input--error");
     registrationInput[i].removeAttribute("required");
     body.classList.remove("page__body--modal-open");
+    intro.classList.remove("intro--modal-open");
   }
 });
 
@@ -53,6 +55,7 @@ enter.addEventListener("close", () => {
     passwordInput[i].type = "password";
     enterInput[i].removeAttribute("required");
     body.classList.remove("page__body--modal-open");
+    intro.classList.remove("intro--modal-open");
   }
 });
 
@@ -60,6 +63,6 @@ for(let i = 0; i < openDialogButton.length; i++) {
   openDialogButton[i].onclick = function () {
     dialog[i].showModal();
     body.classList.add("page__body--modal-open");
-    intro.style.background = "none";
+    intro.classList.add("intro--modal-open");
   }
 }

@@ -30,9 +30,6 @@
   font-size: 24px;
   line-height: 32px;
   color: #fff;
-  padding-left: 70px;
-  padding-right: 10px;
-  margin: 0 auto;
   margin-bottom: 16px;
 
   @media (min-width: $tablet-width) {
@@ -42,10 +39,14 @@
 }
 
 .form__container {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  padding-left: 15%;
+
   @media (min-width: $tablet-width) {
-    justify-content: center;
-    display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: 32px;
   }
 }
