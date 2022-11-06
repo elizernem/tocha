@@ -45,9 +45,9 @@
   padding-left: 15%;
 
   @media (min-width: $tablet-width) {
-    flex-direction: column;
     justify-content: center;
     gap: 32px;
+    padding-right: 5%;
   }
 }
 

@@ -9,58 +9,63 @@ const reviewsButton = document.querySelectorAll(".reviews__slider-button");
 const connectionButtonList = document.querySelector(".connection__button-list");
 const mediaQueryTablet = window.matchMedia("(min-width: 768px)");
 
-
-tariffButton[0].onclick = function () {
-  tariffCard[0].style.order = "0";
-  tariffCard[1].style.order = "1";
-  tariffCard[2].style.order = "2";
-};
-
-tariffButton[1].onclick = function () {
-  tariffCard[0].style.order = "2";
-  tariffCard[1].style.order = "0";
-  tariffCard[2].style.order = "1";
-};
-
-tariffButton[2].onclick = function () {
-  tariffCard[0].style.order = "1";
-  tariffCard[1].style.order = "2";
-  tariffCard[2].style.order = "0";
-};
-
-connectionButton[0].onclick = function () {
-  connectionCard[0].style.order = "0";
-  connectionCard[1].style.order = "1";
-  connectionCard[2].style.order = "2";
-};
-
-connectionButton[1].onclick = function () {
-  connectionCard[0].style.order = "2";
-  connectionCard[1].style.order = "0";
-  connectionCard[2].style.order = "1";
-};
-
-connectionButton[2].onclick = function () {
-  connectionCard[0].style.order = "1";
-  connectionCard[1].style.order = "2";
-  connectionCard[2].style.order = "0";
-};
-
-reviewsButton[0].onclick = function () {
-  reviewsCard[0].style.order = "0";
-  reviewsCard[1].style.order = "1";
-};
-
-reviewsButton[1].onclick = function () {
-  reviewsCard[0].style.order = "1";
-  reviewsCard[1].style.order = "0";
-};
-
-reviewsButton[2].onclick = function () {
-  reviewsCard[0].style.order = "0";
-  reviewsCard[1].style.order = "1";
-};
-
 if (mediaQueryTablet.matches) {
   connectionButtonList.style.display = "none";
+}
+
+for (let i = 0; i < tariffButton.length; i++) {
+  tariffCard[i].style.order = `${tariffButton.length - 1}`;
+  tariffCard[0].style.order = `${0}`;
+  tariffButton[i].onclick = function () {
+    tariffCard[i].style.order = `${0}`;
+    if (i === 0) {
+      tariffCard[i + 1].style.order = `${1}`;
+      tariffCard[i + 2].style.order = `${i + 2}`;
+    } else if (i < tariffButton.length - 1) {
+      tariffCard[i - 1].style.order = `${i + 3}`;
+      tariffCard[i + 1].style.order = `${1}`;
+      tariffCard[0].style.order = `${tariffButton.length - 1}`;
+    } else {
+      tariffCard[0].style.order = `${1}`;
+      tariffCard[i - 1].style.order = `${tariffButton.length - 1}`;
+    }
+  };
+}
+
+for (let i = 0; i < connectionButton.length; i++) {
+  connectionCard[i].style.order = `${connectionButton.length - 1}`;
+  connectionCard[0].style.order = `${0}`;
+  connectionButton[i].onclick = function () {
+    connectionCard[i].style.order = `${0}`;
+    if (i === 0) {
+      connectionCard[i + 1].style.order = `${1}`;
+      connectionCard[i + 2].style.order = `${i + 2}`;
+    } else if (i < connectionButton.length - 1) {
+      connectionCard[i - 1].style.order = `${i + 3}`;
+      connectionCard[i + 1].style.order = `${1}`;
+      connectionCard[0].style.order = `${connectionButton.length - 1}`;
+    } else {
+      connectionCard[0].style.order = `${1}`;
+      connectionCard[i - 1].style.order = `${connectionButton.length - 1}`;
+    }
+  };
+}
+
+for (let i = 0; i < reviewsButton.length; i++) {
+  reviewsCard[i].style.order = `${reviewsButton.length - 1}`;
+  reviewsCard[0].style.order = `${0}`;
+  reviewsButton[i].onclick = function () {
+    reviewsCard[i].style.order = `${0}`;
+    if (i === 0) {
+      reviewsCard[i + 1].style.order = `${1}`;
+      reviewsCard[i + 2].style.order = `${i + 2}`;
+    } else if (i < reviewsButton.length - 1) {
+      reviewsCard[i - 1].style.order = `${i + 3}`;
+      reviewsCard[i + 1].style.order = `${1}`;
+      reviewsCard[0].style.order = `${reviewsButton.length - 1}`;
+    } else {
+      reviewsCard[0].style.order = `${1}`;
+      reviewsCard[i - 1].style.order = `${reviewsButton.length - 1}`;
+    }
+  };
 }
