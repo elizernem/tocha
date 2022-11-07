@@ -15,24 +15,13 @@ if (mediaQueryTablet.matches) {
 
 const slider = function (buttons, slides) {
   for (let i = 0; i < buttons.length; i++) {
-    slides[i].style.order = `${buttons.length - 1}`;
-    slides[0].style.order = `${0}`;
     buttons[i].onclick = function () {
+      slides.forEach((item) => (item.style.order = `${i + 1}`));
       slides[i].style.order = `${0}`;
-      if (i === 0) {
-        slides[i + 1].style.order = `${1}`;
-        slides[i + 2].style.order = `${i + 2}`;
-      } else if (i < buttons.length - 1) {
-        slides[i - 1].style.order = `${i + 3}`;
-        slides[i + 1].style.order = `${1}`;
-        slides[0].style.order = `${buttons.length - 1}`;
-      } else {
-        slides[0].style.order = `${1}`;
-        slides[i - 1].style.order = `${buttons.length - 1}`;
-      }
+      slides[i + 1].style.order = `${1}`;
     };
   }
-}
+};
 
 slider(tariffButton, tariffCard);
 slider(connectionButton, connectionCard);
