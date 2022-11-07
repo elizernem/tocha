@@ -9,10 +9,6 @@ const reviewsButton = document.querySelectorAll(".reviews__slider-button");
 const connectionButtonList = document.querySelector(".connection__button-list");
 const mediaQueryTablet = window.matchMedia("(min-width: 768px)");
 
-if (mediaQueryTablet.matches) {
-  connectionButtonList.style.display = "none";
-}
-
 const slider = function (buttons, slides) {
   for (let i = 0; i < buttons.length; i++) {
     buttons[i].onclick = function () {
@@ -26,3 +22,7 @@ const slider = function (buttons, slides) {
 slider(tariffButton, tariffCard);
 slider(connectionButton, connectionCard);
 slider(reviewsButton, reviewsCard);
+
+if (mediaQueryTablet.matches) {
+  connectionButtonList.style.display = "none";
+}
